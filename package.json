@@ -1,0 +1,38 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "forkify project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arihellyeah/forkify.git"
+  },
+  "author": "Arielle Loring",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arihellyeah/forkify/issues"
+  },
+  "homepage": "https://github.com/arihellyeah/forkify#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.6.4",
+    "html-webpack-plugin": "^3.2.0",
+    "install": "^0.13.0",
+    "npm": "^6.13.7",
+    "regenerator-runtime": "^0.13.3",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}
