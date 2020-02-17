@@ -1,7 +1,32 @@
+import axios from 'axios';
 
-// Then, in Recipe.js (as soon as you get there), please replace:
-// * const res = await axios(`${PROXY}http://food2fork.com/api/get?key=${KEY}&rId=${this.id}`);
-// with this:
-// * const res = await axios(`https://forkify-api.herokuapp.com/api/get?rId=${this.id}`);
-//
-// 👉 That's it, that's all you need to know. Again, make these changes as you go through the projects. For now, just keep following the videos. And now, have fun with the project 😘
+export default class Recipe {
+  constructor(id){
+    this.id = id;
+  }
+
+  async getRecipe() {
+    try {
+      const res = await axios(`https://forkify-api.herokuapp.com/api/get?rId=${this.id}`);
+        this.title = res.data.recipe.title;
+        this.author = res.data.recipe.publisher;
+        this.img = res.data.recipe.image_url;
+        this.url = res.data.recipe.source_url;
+        this.ingredients = res.data.recipe.ingredients;
+    } catch (error) {
+      console.log(error);
+      alert('Something went wrong! :-(');
+    }
+  }
+
+  calcTime() {
+    // Assuming that we need 15 minutes for every 3 ingredients.
+    const numIng = this.ingredients.length;
+    const periods = Math.ceil(numIng / 3);
+    this.time = periods * 15;
+  }
+
+  calcServings() {
+    this.servings = 4;
+  }
+}
