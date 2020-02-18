@@ -22,7 +22,6 @@ import { elements, renderLoader, clearLoader  } from './views/base';
 */
 
 const state = {};
-window.state = state;
 
 /*
 // Search Controller
@@ -30,7 +29,6 @@ window.state = state;
 const controlSearch = async () => {
   // 1) Get query from view
   const query = searchView.getInput();
-  console.log(query);
 
   if (query) {
     // 2) New search object and add to state
@@ -221,5 +219,3 @@ elements.recipe.addEventListener('click', e => {
     controlLike();
   }
 });
-
-window.l = new List();
